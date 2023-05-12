@@ -18,5 +18,5 @@ app.listen(3000, async () => {
   // tweet.comments.push(comment);
   // await tweet.save();
   const tweet= await tweetRepo.getAll(2,4);
-  console.log(tweet); 
+  console.log(tweet[0].contentWithEmail);   
 });

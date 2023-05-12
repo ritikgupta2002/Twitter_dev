@@ -51,7 +51,7 @@ class TweetRepository {
     } catch (error) {
       console.log(error);
     }
-  }
+  } 
 }
 
 module.exports = TweetRepository;
