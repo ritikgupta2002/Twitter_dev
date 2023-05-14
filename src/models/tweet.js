@@ -23,6 +23,13 @@ const tweetSchema = new mongoose.Schema(
 tweetSchema.virtual('contentWithEmail').get(function process(){
   return `${this.content} \nCreated by: ${this.userEmail}`;
 })
+
+tweetSchema.pre('save',function(next){
+  console.log('Inside a hook ');
+  this.content=this.content+'......'
+  next();
+})
+
 //virtual helps us to write custom queries , we can define any with the help of virtuals which will be 
 //computed at runtime and may not be a part of the actual schema .
 const Tweet = mongoose.model("Tweet", tweetSchema);

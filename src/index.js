@@ -17,6 +17,8 @@ app.listen(3000, async () => {
   // const comment = await Comment.create({ content: "new comment2" });
   // tweet.comments.push(comment);
   // await tweet.save();
-  const tweet= await tweetRepo.getAll(2,4);
-  console.log(tweet[0].contentWithEmail);   
+  const tweet=await tweetRepo.create({content:"with hooks now "});
+  console.log(tweet);
+  // const tweet= await tweetRepo.getAll(2,4);
+  // console.log(tweet[0].contentWithEmail);   
 });
