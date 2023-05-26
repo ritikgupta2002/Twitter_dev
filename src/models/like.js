@@ -1,4 +1,4 @@
-import mongoose from "mongoose ";
+import mongoose from "mongoose";
 
 const likeSchema = new mongoose.Schema(
   {
@@ -14,11 +14,10 @@ const likeSchema = new mongoose.Schema(
       refPath: "onModel",
     },
     user: {
-      type: mongoose.schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    
   },
   { timestamps: true }
 );
