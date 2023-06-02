@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const commentSchema = new mongoose.Schema(
   {
@@ -6,9 +6,25 @@ const commentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    userEmail: {
-      type: String,
+
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
+
+    onModel: {
+      type: String,
+      required: true,
+      enum: ["Tweet", "Comment"],
+    },
+
+    commentable: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      refPath: "onModel",
+    },
+    
   },
   { timestamps: true }
 );
